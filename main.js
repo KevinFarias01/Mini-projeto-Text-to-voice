@@ -11,7 +11,7 @@ if(speechSynthesis !==undefined) {
 
 btnSpeak.addEventListener ('click', ()=> {
     var toSpeak = new SpeechSynthesisUtterance(txtInput.value)
-    var selectedVoiceName= voiceList.selectedOptions[0].getAttribute('data-name')
+    var selectedVoiceName= voiceList.value
 
     voices.forEach((voice) =>{
         if(voice.name===selectedVoiceName) {
@@ -32,7 +32,7 @@ function NewVoices(){
         var listItem=document.createElement ('option')
         listItem.textContent= voice.name
         listItem.setAttribute('data-lang',voice.lang)
-        listItem.setAttribute('data.name',voice.name)
+        listItem.setAttribute('data-name',voice.name)
 
         voiceList.appendChild(listItem)
     })
